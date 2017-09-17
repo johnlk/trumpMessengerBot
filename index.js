@@ -15,6 +15,16 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
 
+var trumpData;
+
+
+var fs = require('fs');
+ 
+fs.readFile('./output/all.txt', 'utf8', function(err, contents) {
+	trumpData = contents.split('\n');
+    // console.log(data[0]);
+});
+
 app.set('port', (process.env.PORT || 8080))
 
 // parse application/x-www-form-urlencoded
@@ -50,7 +60,14 @@ app.post('/webhook/', function (req, res) {
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
+
+			var strRes = trumpData[Math.floor(Math.random()*trumpData.length)];
+			while(strRes.length < 5){
+				strRes = trumpData[Math.floor(Math.random()*trumpData.length)];
+			}
+			// console.log(strRes);
+
+			sendTextMessage(sender, strRes, token)
 			continue
 		}
 	}
