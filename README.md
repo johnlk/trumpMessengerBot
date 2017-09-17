@@ -6,7 +6,7 @@ This bot was trained from a set of tweets by @theRealDonald from 2009 till prese
 
 The chatbot for messenger is found [here](https://www.facebook.com/hackmit2017trumpbot/). <br><br> Enjoy. <br><br>
 
-[Screen Shot](https://rawgit.com/johnlk/trumpMessengerBot/master/sreenshot.png)
+![Screen Shot](https://rawgit.com/johnlk/trumpMessengerBot/master/sreenshot.png)
 
 ## Work
 
