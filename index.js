@@ -56,7 +56,13 @@ app.post('/webhook/', function (req, res) {
 		if (event.message && event.message.text) {
 			let text = event.message.text
 			
-			sendTextMessage(sender, "hello world")
+			var strRes = trumpData[Math.floor(Math.random()*trumpData.length)];
+			while(strRes.length < 5){
+				strRes = trumpData[Math.floor(Math.random()*trumpData.length)];
+			}
+			// console.log(strRes);
+
+			sendTextMessage(sender, strRes)
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
